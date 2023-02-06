@@ -23,8 +23,7 @@ public class Problem2Test {
     @MethodSource("removeDuplResult")
     void removeDupl(String input, String result) {
         // when
-        Deque<Character> b = removeDuplicate(input);
-        String inputResult = String.valueOf(toCharArray(b));
+        String inputResult = removeDuplicate(input);
 
         // then
         assertThat(result.equals(inputResult)).isTrue();
@@ -43,7 +42,7 @@ public class Problem2Test {
         );
     }
 
-    public Deque<Character> removeDuplicate(String crypyogram) {
+    public String removeDuplicate(String crypyogram) {
         Deque<Character> stack = new ArrayDeque<>();
         int idx = 0;
         while (idx < crypyogram.length()) {
@@ -57,6 +56,7 @@ public class Problem2Test {
 
             if (isDuplicated) stack.removeLast();
         }
-        return stack;
+
+        return String.valueOf(toCharArray(stack));
     }
 }
