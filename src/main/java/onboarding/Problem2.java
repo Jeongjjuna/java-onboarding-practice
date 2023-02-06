@@ -40,6 +40,4 @@ public class Problem2 {
 
         return String.valueOf(toCharArray(stack));
     }
-
-    private static
 }
